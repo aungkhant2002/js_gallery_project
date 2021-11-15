@@ -8,61 +8,15 @@
     <title>JS Gallery Project</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<style>
-
-    #uploader {
-        background-color: #e3e3e3;
-        padding: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-    }
-
-    #uploader img {
-        width: 80px;
-    }
-
-    #upload {
-        display: none;
-    }
-
-    #preview {
-        width: 200px;
-        padding: 10px;
-    }
-
-</style>
 <body>
 
 <div id="uploader">
     <img src="img/upload.png" alt="">
 </div>
 <input type="file" id="upload">
-<br><br>
-<img src="" id="preview" alt="">
+<div id="gallery"></div>
 
 <script src="js/features.js"></script>
-<script>
 
-    let upload = document.getElementById("upload");
-    let preview = document.getElementById("preview");
-    let uploader = document.getElementById("uploader");
-
-    uploader.addEventListener("click", function () {
-        upload.click();
-    });
-    
-    upload.addEventListener("change", function () {
-        let file = this.files[0];
-        // console.log(file);
-        const reader = new FileReader();
-        reader.addEventListener("load", function () {
-            preview.src = reader.result;
-        })
-        reader.readAsDataURL(file);
-    })
-
-</script>
 </body>
 </html>
