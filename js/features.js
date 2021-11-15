@@ -15,12 +15,14 @@ uploader.addEventListener("click", function () {
 });
 
 upload.addEventListener("change", function () {
-    let file = this.files[0];
+    let file = this.files;
     // console.log(file);
-    const reader = new FileReader();
-    reader.addEventListener("load", function () {
-        addToGallery(reader.result);
-        // preview.src = reader.result;
-    })
-    reader.readAsDataURL(file);
+    for (let i = 0 ; i < file.length; i++) {
+        const reader = new FileReader();
+        reader.addEventListener("load", function () {
+            addToGallery(reader.result);
+            // preview.src = reader.result;
+        })
+        reader.readAsDataURL(file[i]);
+    }
 })
